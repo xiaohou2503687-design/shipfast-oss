@@ -1,8 +1,8 @@
 ﻿# 🚀 ShipFast CLI
 
-**One command to deploy any project. No DevOps required.**
+**One command to deploy any project. No DevOps required. 一行命令部署，告别 YAML 调试噩梦。**
 
-[![npm version](https://img.shields.io/npm/v/shipfast-cli)](https://www.npmjs.com/package/shipfast-cli)
+[![GitHub stars](https://img.shields.io/github/stars/xiaohou2503687-design/shipfast-oss?style=social)](https://github.com/xiaohou2503687-design/shipfast-oss)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
@@ -29,7 +29,7 @@ Stop wrestling with Dockerfiles, CI/CD configs, and cloud dashboards. ShipFast a
 ## ✨ Features
 
 - 🔍 **Auto-detection** — Next.js, React, Vue, Go, Python, Node.js, and more
-- 🚀 **One-command deploy** — `shipfast deploy` and you're live
+- 🚀 **One-command deploy** — `shipfast deploy` and you are live
 - 🔐 **Env management** — `shipfast env` manages environment variables
 - 📊 **Status** — `shipfast status` shows deployment info
 - 📝 **Logs** — `shipfast logs` tails production logs
@@ -38,20 +38,25 @@ Stop wrestling with Dockerfiles, CI/CD configs, and cloud dashboards. ShipFast a
 ## 📦 Quick Start
 
 ```bash
+# Install from GitHub
+git clone https://github.com/xiaohou2503687-design/shipfast-oss.git
+cd shipfast-oss
+npm install -g .
+
 # Deploy instantly
-npx shipfast-cli deploy
+shipfast deploy
 
 # Or pick a platform
-npx shipfast-cli deploy --platform vercel
+shipfast deploy --platform vercel
 
 # Manage env vars
-npx shipfast-cli env --set DATABASE_URL=postgres://...
+shipfast env --set DATABASE_URL=postgres://...
 
 # Check status
-npx shipfast-cli status
+shipfast status
 
 # Tail logs
-npx shipfast-cli logs --lines 100
+shipfast logs --lines 100
 ```
 
 ## 🎯 Supported Platforms
@@ -73,14 +78,6 @@ npx shipfast-cli logs --lines 100
 | Python | Railway | `requirements.txt` |
 | Node.js | Railway | `package.json` (no framework detected) |
 
-## 📦 Installation
-
-```bash
-npm install -g shipfast-cli
-# or use without installing:
-npx shipfast-cli deploy
-```
-
 ## 💎 Premium Templates
 
 Need production-ready configs? Grab battle-tested deploy templates:
@@ -97,9 +94,9 @@ Need production-ready configs? Grab battle-tested deploy templates:
 
 ## 🧑‍💻 Built By
 
-An indie developer who spent way too many weekends debugging YAML configs and decided to fix it once and for all.
+Independent developer [@chunfeng3681](https://github.com/chunfeng3681) — tired of debugging YAML on weekends.
 
-[shipfast.dev@proton.me](mailto:shipfast.dev@proton.me)
+📧 [shipfast.dev@proton.me](mailto:shipfast.dev@proton.me)
 
 ## 📄 License
 
@@ -107,4 +104,4 @@ MIT — free to use, modify, and distribute.
 
 ---
 
-⭐ **Star this repo** if you also hate writing deployment configs!
+⭐ **Star this repo** if you hate writing deployment configs too!
