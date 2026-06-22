@@ -1,0 +1,336 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShipFast - 一行命令部署到生产环境 | ¥49 起</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#0a0a0a;color:#fff;line-height:1.6}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* Hero */
+.hero{text-align:center;padding:80px 20px 50px;background:linear-gradient(135deg,#0a0a0a 0%,#1a1a2e 50%,#16213e 100%)}
+.hero h1{font-size:3.2em;font-weight:800;background:linear-gradient(135deg,#00d4ff,#7b2ff7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:16px}
+.hero .tagline{font-size:1.3em;color:#999;max-width:650px;margin:0 auto 30px}
+.hero .demo-box{background:#111;border:1px solid #333;border-radius:12px;padding:24px;max-width:600px;margin:0 auto 30px;text-align:left;font-family:"Fira Code",monospace}
+.hero .demo-box .prompt{color:#00d4ff}
+.hero .demo-box .cmd{color:#7b2ff7}
+.hero .demo-box .output{color:#0f0;margin-top:8px}
+.cta-btn{display:inline-block;background:linear-gradient(135deg,#00d4ff,#7b2ff7);color:#fff;text-decoration:none;padding:16px 48px;border-radius:50px;font-size:1.2em;font-weight:700;cursor:pointer;border:none;transition:transform .2s,box-shadow .2s}
+.cta-btn:hover{transform:scale(1.05);box-shadow:0 0 30px rgba(123,47,247,.4)}
+.guarantee{font-size:.85em;color:#666;margin-top:10px}
+
+/* Pricing */
+.pricing{padding:80px 0}
+.pricing h2{text-align:center;font-size:2em;margin-bottom:50px}
+.packs{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.pack{background:#111;border:1px solid #222;border-radius:16px;padding:30px;text-align:center;transition:border-color .2s;position:relative}
+.pack:hover{border-color:#7b2ff7}
+.pack.featured{border-color:#7b2ff7;box-shadow:0 0 20px rgba(123,47,247,.2)}
+.pack .badge{position:absolute;top:-12px;right:20px;background:#7b2ff7;color:#fff;padding:4px 12px;border-radius:20px;font-size:.75em;font-weight:700}
+.pack h3{font-size:1.2em;margin-bottom:8px}
+.pack .price{font-size:2.5em;font-weight:800;color:#00d4ff;margin:12px 0}
+.pack .price .unit{font-size:.4em;color:#666}
+.pack .desc{color:#999;font-size:.9em;margin-bottom:16px;min-height:40px}
+.pack ul{list-style:none;text-align:left;margin-bottom:20px}
+.pack ul li{padding:5px 0;color:#aaa;font-size:.9em}
+.pack ul li::before{content:"✓ ";color:#00d4ff}
+.pack .buy-btn{display:block;background:#7b2ff7;color:#fff;text-decoration:none;padding:12px;border-radius:8px;font-weight:700;cursor:pointer;border:none;width:100%;font-size:1em;transition:background .2s}
+.pack .buy-btn:hover{background:#9254ff}
+
+/* Problems */
+.problems{padding:60px 0}
+.problems h2{text-align:center;font-size:2em;margin-bottom:40px}
+.pain-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.pain{background:#111;border:1px solid #222;border-radius:12px;padding:20px;font-size:1.05em;color:#ccc}
+.pain .icon{font-size:1.5em;margin-bottom:8px}
+
+/* Modal */
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);z-index:1000;align-items:center;justify-content:center}
+.modal.active{display:flex}
+.modal-content{background:#1a1a1a;border:1px solid #333;border-radius:16px;padding:40px;max-width:480px;width:90%;text-align:center}
+.modal-content h3{font-size:1.5em;margin-bottom:12px}
+.modal-content .order-info{background:#111;border-radius:8px;padding:16px;margin:20px 0;text-align:left}
+.modal-content .order-info div{display:flex;justify-content:space-between;padding:4px 0;color:#aaa}
+.modal-content .order-info .total{color:#00d4ff;font-weight:700;font-size:1.1em;border-top:1px solid #333;margin-top:8px;padding-top:8px}
+.modal-content .pay-methods{margin:20px 0}
+.modal-content .pay-methods button{background:#222;border:1px solid #444;color:#fff;padding:10px 20px;border-radius:8px;margin:4px;cursor:pointer;font-size:.95em}
+.modal-content .pay-methods button:hover,.modal-content .pay-methods button.selected{background:#7b2ff7;border-color:#7b2ff7}
+.modal-content .qr-section{margin:20px 0;display:none}
+.modal-content .qr-section.show{display:block}
+.modal-content .qr-placeholder{width:200px;height:200px;background:#222;border:2px dashed #444;border-radius:12px;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;color:#666;font-size:.9em}
+.modal-content .pay-email{color:#00d4ff;margin:12px 0;font-size:.9em}
+.close-btn{background:none;border:1px solid #444;color:#999;padding:8px 24px;border-radius:20px;cursor:pointer;margin-top:16px;font-size:.9em}
+.close-btn:hover{color:#fff;border-color:#666}
+
+/* FAQ */
+.faq{padding:80px 0}
+.faq h2{text-align:center;font-size:2em;margin-bottom:40px}
+.faq-item{background:#111;border-radius:12px;padding:20px;margin-bottom:12px;cursor:pointer}
+.faq-item .q{color:#00d4ff;font-weight:600;font-size:1.05em}
+.faq-item .a{color:#999;margin-top:8px;display:none;font-size:.95em}
+.faq-item.open .a{display:block}
+
+/* Footer */
+.footer{text-align:center;padding:40px 20px;color:#555;font-size:.85em;border-top:1px solid #111}
+.footer a{color:#7b2ff7;text-decoration:none}
+
+/* Toast */
+.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#0f0;color:#000;padding:12px 24px;border-radius:8px;font-weight:600;z-index:2000;display:none}
+.toast.show{display:block;animation:fadeIn .3s}
+@keyframes fadeIn{from{opacity:0;transform:translateX(-50%) translateY(20px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
+
+@media(max-width:600px){.hero h1{font-size:2em}.packs{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <h1>⚡ ShipFast</h1>
+  <p class="tagline">一行命令部署到生产环境。自动检测项目类型，告别 YAML 地狱。</p>
+  <div class="demo-box">
+    <span class="prompt">$ </span><span class="cmd">npx shipfast-cli deploy</span><br>
+    <span class="output">🔍 Detected: Next.js 14<br>📦 Building...<br>🚀 Deployed to Vercel in 12s<br>🌐 https://your-app.vercel.app</span>
+  </div>
+  <p style="font-size:1.1em;color:#ccc;margin:20px 0"><strong>¥49 起 · 永久买断 · 30天无理由退款</strong></p>
+  <button class="cta-btn" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">🚀 立即购买</button>
+</section>
+
+<!-- Pricing -->
+<section class="pricing" id="pricing">
+  <h2>选择你的包</h2>
+  <div class="packs">
+    <div class="pack">
+      <h3>⚡ Next.js Pro</h3>
+      <div class="price">¥49<span class="unit">/买断</span></div>
+      <div class="desc">Next.js 一键部署全家桶</div>
+      <ul>
+        <li>生产级 Dockerfile（多阶段构建）</li>
+        <li>Vercel 最佳实践 vercel.json</li>
+        <li>SEO 元标签 + 安全头配置</li>
+        <li>GitHub Actions CI/CD</li>
+        <li>Sentry 错误追踪集成</li>
+      </ul>
+      <button class="buy-btn" onclick="openOrder('Next.js Pro','¥49')">购买 ¥49</button>
+    </div>
+
+    <div class="pack featured">
+      <div class="badge">🔥 最热门</div>
+      <h3>🛠️ SaaS Starter</h3>
+      <div class="price">¥79<span class="unit">/买断</span></div>
+      <div class="desc">Next.js 14 + Supabase + Stripe</div>
+      <ul>
+        <li>Next.js 14 App Router 模板</li>
+        <li>Supabase 认证 + 数据库</li>
+        <li>Stripe 支付集成（开箱即用）</li>
+        <li>用户仪表盘 + 团队管理</li>
+        <li>Tailwind CSS + 暗色模式</li>
+        <li>Docker Compose 一键启动</li>
+      </ul>
+      <button class="buy-btn" onclick="openOrder('SaaS Starter','¥79')">购买 ¥79</button>
+    </div>
+
+    <div class="pack">
+      <h3>🐳 Docker Pack</h3>
+      <div class="price">¥49<span class="unit">/买断</span></div>
+      <div class="desc">全栈容器化部署方案</div>
+      <ul>
+        <li>Node/Python/Go Dockerfile 模板</li>
+        <li>Docker Compose 多服务编排</li>
+        <li>Nginx 反向代理 + SSL</li>
+        <li>健康检查 + 自动重启</li>
+        <li>日志收集配置</li>
+      </ul>
+      <button class="buy-btn" onclick="openOrder('Docker Pack','¥49')">购买 ¥49</button>
+    </div>
+
+    <div class="pack">
+      <h3>🔄 CI/CD Pack</h3>
+      <div class="price">¥49<span class="unit">/买断</span></div>
+      <div class="desc">零配置 CI/CD 流水线</div>
+      <ul>
+        <li>GitHub Actions 完整流水线</li>
+        <li>GitLab CI 配置模板</li>
+        <li>自动测试 + 构建 + 部署</li>
+        <li>多环境（dev/staging/prod）</li>
+        <li>Slack/飞书 通知集成</li>
+      </ul>
+      <button class="buy-btn" onclick="openOrder('CI/CD Pack','¥49')">购买 ¥49</button>
+    </div>
+
+    <div class="pack featured" style="grid-column:1/-1;max-width:400px;margin:0 auto">
+      <div class="badge">💎 最超值</div>
+      <h3>🎁 Complete Bundle</h3>
+      <div class="price">¥149<span class="unit">/买断</span></div>
+      <div class="desc">全部 4 个包 + CLI 工具 + 终身更新</div>
+      <ul>
+        <li>Next.js Pro + SaaS Starter + Docker + CI/CD</li>
+        <li>ShipFast CLI 源码 + 自定义权限</li>
+        <li>终身免费更新</li>
+        <li>优先技术支持（48h 内回复）</li>
+      </ul>
+      <button class="buy-btn" style="font-size:1.1em;padding:14px" onclick="openOrder('Complete Bundle','¥149')">购买 ¥149（省 ¥77）</button>
+    </div>
+  </div>
+</section>
+
+<!-- Pain points -->
+<section class="problems">
+  <h2>是不是很熟悉？</h2>
+  <div class="pain-list">
+    <div class="pain"><div class="icon">😤</div>写了 YAML → 提交 → 跑 CI → 报错 → 再改 → 再来...</div>
+    <div class="pain"><div class="icon">🤯</div>部署一个 Next.js 要配 5 种文件，搞一整个下午</div>
+    <div class="pain"><div class="icon">😵</div>Vibe Coding 2 小时搭好 App，部署花了 2 天</div>
+    <div class="pain"><div class="icon">🔁</div>每个新项目都要重新写一遍部署配置</div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <h2>常见问题</h2>
+  <div class="faq-item" onclick="this.classList.toggle('open')">
+    <div class="q">📦 购买后如何收到文件？</div>
+    <div class="a">支付完成后，我们会通过你留下的邮箱在 5 分钟内发送下载链接。所有文件都是纯文本（YAML/Dockerfile/JS），直接复制即可使用。</div>
+  </div>
+  <div class="faq-item" onclick="this.classList.toggle('open')">
+    <div class="q">🔄 有更新怎么办？</div>
+    <div class="a">购买后永久免费获取所有更新。我们会通过邮件通知你，直接下载最新版本即可。</div>
+  </div>
+  <div class="faq-item" onclick="this.classList.toggle('open')">
+    <div class="q">💰 真的 30 天无理由退款？</div>
+    <div class="a">是的。如果你觉得不值，30 天内回复邮件即可全额退款。零风险。</div>
+  </div>
+  <div class="faq-item" onclick="this.classList.toggle('open')">
+    <div class="q">🌐 支持哪些平台？</div>
+    <div class="a">Vercel / Railway / Netlify，覆盖 Next.js、React、Vue、Go、Python、Node.js 等主流技术栈。</div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© 2026 ShipFast · <a href="mailto:xiaohou2503687-design.github.io/shipfast-oss@proton.me">xiaohou2503687-design.github.io/shipfast-oss@proton.me</a></p>
+  <p style="margin-top:8px">Made by an indie dev who hates DevOps ✌️</p>
+</footer>
+
+<!-- Order Modal -->
+<div class="modal" id="orderModal">
+  <div class="modal-content">
+    <h3 id="modalTitle">确认订单</h3>
+    <div class="order-info">
+      <div><span>商品</span><span id="orderProduct">-</span></div>
+      <div class="total"><span>应付</span><span id="orderPrice">-</span></div>
+    </div>
+    <p style="color:#999;font-size:.9em;margin-bottom:12px">选择支付方式：</p>
+    <div class="pay-methods">
+      <button class="selected" onclick="selectPay('alipay',this)">支付宝</button>
+      <button onclick="selectPay('wechat',this)">微信支付</button>
+      <button onclick="selectPay('manual',this)">手动转账</button>
+    </div>
+
+    <div class="qr-section show" id="qrAlipay">
+      <img src="https://via.placeholder.com/200x200/222/00d4ff?text=Alipay+QR" alt="Alipay" style="width:200px;height:200px;border-radius:12px;margin:0 auto;display:block"><p style="color:#999;font-size:.8em;margin-top:8px">支付宝扫码支付<br>支付后发送截图至下方邮箱</p>
+      <p style="color:#aaa;font-size:.85em">扫码支付后点击下方「我已完成支付」</p>
+    </div>
+    <div class="qr-section" id="qrWechat">
+      <img src="https://via.placeholder.com/200x200/222/07c160?text=WeChat+QR" alt="WeChat" style="width:200px;height:200px;border-radius:12px;margin:0 auto;display:block"><p style="color:#999;font-size:.8em;margin-top:8px">微信扫码支付<br>支付后发送截图至下方邮箱</p>
+      <p style="color:#aaa;font-size:.85em">扫码支付后点击下方「我已完成支付」</p>
+    </div>
+    <div class="qr-section" id="qrManual">
+      <p style="color:#aaa;font-size:.85em">请转账至以下账户：</p>
+      <p class="pay-email">📧 xiaohou2503687-design.github.io/shipfast-oss@proton.me</p>
+      <p style="color:#666;font-size:.8em">（支付宝/微信/银行转账均可，备注你的邮箱）</p>
+    </div>
+
+    <input type="email" id="orderEmail" placeholder="你的邮箱地址（用于接收文件）" style="width:100%;padding:12px;border-radius:8px;border:1px solid #444;background:#222;color:#fff;font-size:.95em;margin:12px 0">
+    <button class="cta-btn" onclick="confirmOrder()" style="width:100%;margin-top:8px">✅ 我已完成支付</button>
+    <p style="color:#666;font-size:.75em;margin-top:8px">支付完成后5分钟内发送下载链接到你的邮箱</p>
+    <button class="close-btn" onclick="closeModal()">取消</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+let currentProduct = "";
+let currentPrice = "";
+let currentPayMethod = "alipay";
+
+function openOrder(product, price) {
+  currentProduct = product;
+  currentPrice = price;
+  document.getElementById("orderProduct").textContent = product;
+  document.getElementById("orderPrice").textContent = price;
+  document.getElementById("modalTitle").textContent = "🛒 " + product;
+  document.getElementById("orderModal").classList.add("active");
+  resetPayMethod();
+}
+
+function closeModal() {
+  document.getElementById("orderModal").classList.remove("active");
+}
+
+function selectPay(method, btn) {
+  currentPayMethod = method;
+  document.querySelectorAll(".pay-methods button").forEach(b => b.classList.remove("selected"));
+  btn.classList.add("selected");
+  document.querySelectorAll(".qr-section").forEach(s => s.classList.remove("show"));
+  document.getElementById("qr" + method.charAt(0).toUpperCase() + method.slice(1)).classList.add("show");
+}
+
+function resetPayMethod() {
+  currentPayMethod = "alipay";
+  document.querySelectorAll(".pay-methods button").forEach(b => b.classList.remove("selected"));
+  document.querySelector(".pay-methods button").classList.add("selected");
+  document.querySelectorAll(".qr-section").forEach(s => s.classList.remove("show"));
+  document.getElementById("qrAlipay").classList.add("show");
+}
+
+function confirmOrder() {
+  const email = document.getElementById("orderEmail").value.trim();
+  if (!email || !email.includes("@")) {
+    showToast("请输入有效的邮箱地址");
+    return;
+  }
+
+  // Log order (in production, this would POST to a backend)
+  const order = {
+    product: currentProduct,
+    price: currentPrice,
+    email: email,
+    payMethod: currentPayMethod,
+    time: new Date().toISOString(),
+    status: "pending"
+  };
+
+  // Store to localStorage as fallback, also try to send to backend
+  const orders = JSON.parse(localStorage.getItem("shipfast_orders") || "[]");
+  orders.push(order);
+  localStorage.setItem("shipfast_orders", JSON.stringify(orders));
+
+  // Try to notify via ntfy.sh if available
+  try {
+    fetch("https://ntfy.sh/shipfast-orders", {
+      method: "POST",
+      body: `NEW ORDER: ${currentProduct} - ${currentPrice} from ${email} via ${currentPayMethod}`
+    }).catch(() => {});
+  } catch(e) {}
+
+  closeModal();
+  document.getElementById("orderEmail").value = "";
+  showToast("✅ 订单已提交！我们会尽快将文件发送到 " + email);
+}
+
+function showToast(msg) {
+  const t = document.getElementById("toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  setTimeout(() => t.classList.remove("show"), 4000);
+}
+
+// Close modal on background click
+document.getElementById("orderModal").addEventListener("click", function(e) {
+  if (e.target === this) closeModal();
+});
+</script>
+</body>
+</html>
