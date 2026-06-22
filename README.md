@@ -90,7 +90,7 @@ Need production-ready configs? Grab battle-tested deploy templates:
 | **CI/CD Pack** | ¥49 ($7) | GitHub Actions + GitLab CI full pipelines |
 | **Complete Bundle** | **¥149 ($21)** | All 4 + CLI + lifetime updates |
 
-👉 **[Get Premium Templates](https://shipfast.dev)** — 30% off at launch
+👉 **[Get Premium Templates](https://xiaohou2503687-design.github.io/shipfast-oss/)** — 30% off at launch
 
 ## 🧑‍💻 Built By
 
