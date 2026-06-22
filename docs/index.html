@@ -222,22 +222,26 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;b
     </div>
     <p style="color:#999;font-size:.9em;margin-bottom:12px">选择支付方式：</p>
     <div class="pay-methods">
-      <button class="selected" onclick="selectPay('alipay',this)">支付宝</button>
-      <button onclick="selectPay('wechat',this)">微信支付</button>
-      <button onclick="selectPay('manual',this)">手动转账</button>
-    </div>
-
-    <div class="qr-section show" id="qrAlipay">
-      <img src="https://via.placeholder.com/200x200/222/00d4ff?text=Alipay+QR" alt="Alipay" style="width:200px;height:200px;border-radius:12px;margin:0 auto;display:block"><p style="color:#999;font-size:.8em;margin-top:8px">支付宝扫码支付<br>支付后发送截图至下方邮箱</p>
-      <p style="color:#aaa;font-size:.85em">扫码支付后点击下方「我已完成支付」</p>
-    </div>
-    <div class="qr-section" id="qrWechat">
-      <img src="https://via.placeholder.com/200x200/222/07c160?text=WeChat+QR" alt="WeChat" style="width:200px;height:200px;border-radius:12px;margin:0 auto;display:block"><p style="color:#999;font-size:.8em;margin-top:8px">微信扫码支付<br>支付后发送截图至下方邮箱</p>
-      <p style="color:#aaa;font-size:.85em">扫码支付后点击下方「我已完成支付」</p>
-    </div>
-    <div class="qr-section" id="qrManual">
-      <p style="color:#aaa;font-size:.85em">请转账至以下账户：</p>
-      <p class="pay-email">📧 xiaohou2503687-design.github.io/shipfast-oss@proton.me</p>
+  <a href="https://github.com/sponsors/xiaohou2503687-design" target="_blank" class="selected" style="background:#7b2ff7;border:none;color:#fff;padding:10px 20px;border-radius:8px;margin:4px;cursor:pointer;font-size:.95em;text-decoration:none;display:inline-block">💜 GitHub Sponsors</a>
+  <button onclick="showAlipay()">📱 支付宝</button>
+  <button onclick="showWechat()">💚 微信支付</button>
+</div>
+<div id="alipay-qr" class="qr-section">
+  <p style="color:#00d4ff;margin-bottom:12px">支付宝扫码支付 ¥<span id="pay-amount">49</span></p>
+  <div style="width:200px;height:200px;background:#222;border:2px dashed #444;border-radius:12px;margin:0 auto;display:flex;align-items:center;justify-content:center;color:#666;font-size:.85em;text-align:center;line-height:1.5">
+    请替换为<br>支付宝收款码图片<br><br>打开支付宝 → 收钱<br>截图保存 → 替换此处
+  </div>
+  <p style="color:#999;font-size:.8em;margin-top:10px">支付后发送截图至下方邮箱<br>24小时内自动发送下载链接</p>
+</div>
+<div id="wechat-qr" class="qr-section">
+  <p style="color:#07c160;margin-bottom:12px">微信扫码支付 ¥<span id="pay-amount-wx">49</span></p>
+  <div style="width:200px;height:200px;background:#222;border:2px dashed #444;border-radius:12px;margin:0 auto;display:flex;align-items:center;justify-content:center;color:#666;font-size:.85em;text-align:center;line-height:1.5">
+    请替换为<br>微信收款码图片<br><br>打开微信 → 收付款<br>截图保存 → 替换此处
+  </div>
+  <p style="color:#999;font-size:.8em;margin-top:10px">支付后发送截图至下方邮箱<br>24小时内自动发送下载链接</p>
+</div>
+<p class="pay-email">📧 支付确认: shipfast.dev@proton.me</p>
+<p style="color:#666;font-size:.75em;margin-top:8px">推荐使用 GitHub Sponsors，自动交付，无需等待</p>
       <p style="color:#666;font-size:.8em">（支付宝/微信/银行转账均可，备注你的邮箱）</p>
     </div>
 
