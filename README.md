@@ -78,6 +78,17 @@ shipfast logs --lines 100
 | Python | Railway | `requirements.txt` |
 | Node.js | Railway | `package.json` (no framework detected) |
 
+
+## 💳 付款方式
+
+| 方式 | 链接 | 支持币种 |
+|------|------|----------|
+| **PayPal** | [paypal.me/top527](https://www.paypal.me/top527) | 全球 |
+| **GitHub Sponsors** | [Sponsor @xiaohou2503687-design](https://github.com/sponsors/xiaohou2503687-design) | 支付宝/微信/银联/信用卡 |
+| **支付宝/微信** | 扫码支付（落地页） | RMB |
+
+付款后发送截图至 **shipfast.dev@proton.me**，24 小时内自动发送下载链接。
+
 ## 💎 Premium Templates
 
 Need production-ready configs? Grab battle-tested deploy templates:
