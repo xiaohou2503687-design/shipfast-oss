@@ -1,0 +1,31 @@
+﻿{
+  "name": "shipfast",
+  "version": "0.1.0",
+  "description": "Deploy any project to production with one command",
+  "main": "src/index.js",
+  "bin": {
+    "shipfast": "./bin/shipfast.js"
+  },
+  "scripts": {
+    "test": "node bin/shipfast.js --help"
+  },
+  "keywords": ["deploy","cli","vercel","devops","ship","production","launch"],
+  "author": "ShipFast",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shipfast-dev/shipfast"
+  },
+  "type": "commonjs",
+  "dependencies": {
+    "axios": "^1.7.0",
+    "chalk": "^4.1.2",
+    "commander": "^13.0.0",
+    "conf": "^13.0.0",
+    "fs-extra": "^11.2.0",
+    "inquirer": "^8.2.6",
+    "ora": "^5.4.1",
+    "semver": "^7.6.0",
+    "simple-git": "^3.24.0"
+  }
+}
