@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>🚀 ShipFast 一键发布台</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0d1117;color:#c9d1d9;padding:20px}
+h1{text-align:center;padding:20px;color:#3fb950}
+.card{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:24px;margin:16px 0;max-width:800px;margin-left:auto;margin-right:auto}
+.card h2{margin-bottom:12px}
+.card .platform{display:inline-block;padding:4px 12px;border-radius:6px;font-size:.85em;font-weight:700;margin-bottom:12px}
+.plat-hn{background:#ff6600;color:#000}.plat-v2ex{background:#334;color:#fff}.plat-reddit{background:#ff4500;color:#fff}.plat-devto{background:#4b2c92;color:#fff}
+.content-box{background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:16px;font-size:.95em;line-height:1.7;max-height:300px;overflow-y:auto;white-space:pre-wrap;font-family:monospace;margin:12px 0}
+.btn{display:inline-block;padding:10px 24px;border-radius:8px;font-weight:700;cursor:pointer;border:none;color:#fff;margin:4px;font-size:.95em}
+.btn-copy{background:#238636}.btn-copy:hover{background:#2ea043}
+.btn-go{background:#1f6feb;text-decoration:none}.btn-go:hover{background:#388bfd}
+.btn-copied{background:#555!important}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#238636;color:#fff;padding:10px 24px;border-radius:8px;z-index:999;display:none}
+</style>
+</head>
+<body>
+<h1>🚀 ShipFast 一键发布台</h1>
+<p style="text-align:center;color:#8b949e;margin-bottom:20px">点击复制 → 打开平台 → 粘贴发布</p>
+
+<!-- HN -->
+<div class="card">
+<span class="platform plat-hn">Hacker News</span>
+<h2>点赞已有帖子</h2>
+<p style="color:#8b949e;margin-bottom:8px">打开下面链接，点击 ▲ 点赞</p>
+<a href="https://news.ycombinator.com/item?id=48639377" target="_blank" class="btn btn-go">🔗 打开 HN 帖子</a>
+</div>
+
+<!-- V2EX -->
+<div class="card">
+<span class="platform plat-v2ex">V2EX</span>
+<h2>发帖到 V2EX · 创造节点</h2>
+<div class="content-box" id="v2exContent">做了6个独立开发者工具，2周内全部上线变现
+
+周末不写 YAML 了，自己做了套工具。
+
+6 个产品，一个 PayPal 链接收钱：
+
+🚀 ShipFast — 一键部署，自动识别项目类型  ¥49起
+💰 PayFlow — 终端里看 Stripe MRR/流失预测  ¥39/月
+🤖 BizBot — AI 客服，一行脚本嵌入  ¥29/月
+🛡️ GuardRail — 安全漏洞扫描  ¥19/月
+📸 PageSnap — AI 分析落地页转化率  ¥29/次
+🔍 SEOmatic — 一个关键词生成20篇SEO文章  ¥49/月
+
+技术栈：Node.js CLI + GitHub Packages 分发 + GitHub Pages 落地页
+支付：PayPal / 支付宝 / 微信
+
+网站：https://xiaohou2503687-design.github.io/shipfast-oss/
+免费体检工具：https://xiaohou2503687-design.github.io/shipfast-oss/health-check.html
+
+安装：
+npm i -g @xiaohou2503687-design/shipfast
+npm i -g @xiaohou2503687-design/payflow
+
+求拍砖，尤其是定价方面 🧱</div>
+<div class="actions">
+<button class="btn btn-copy" onclick="copyText('v2exContent', this)">📋 复制内容</button>
+<a href="https://www.v2ex.com/new/create" target="_blank" class="btn btn-go">🔗 打开 V2EX 发帖</a>
+</div>
+</div>
+
+<!-- Reddit -->
+<div class="card">
+<span class="platform plat-reddit">Reddit</span>
+<h2>发帖到 r/SaaS</h2>
+<div class="content-box" id="redditContent">I built 6 indie dev tools in 2 weeks — all monetized with one PayPal link
+
+After spending too many weekends writing YAML and clicking dashboards, I built my own toolkit:
+
+🚀 ShipFast — One-command deploy ($7)  
+💰 PayFlow — Stripe MRR/churn in your terminal ($5/mo)  
+🤖 BizBot — AI chatbot, one script tag ($4/mo)  
+🛡️ GuardRail — Security scanner ($3/mo)  
+📸 PageSnap — AI landing page CRO audit ($4/audit)  
+🔍 SEOmatic — 1 keyword → 20 SEO articles ($7/mo)
+
+All installable via npm. Free website health checker included.
+🎁 Bundle: all 6 tools lifetime for $28
+
+Site: https://xiaohou2503687-design.github.io/shipfast-oss/
+Free tool: https://xiaohou2503687-design.github.io/shipfast-oss/health-check.html
+
+Roast my pricing strategy.</div>
+<div class="actions">
+<button class="btn btn-copy" onclick="copyText('redditContent', this)">📋 复制内容</button>
+<a href="https://www.reddit.com/r/SaaS/submit" target="_blank" class="btn btn-go">🔗 发到 r/SaaS</a>
+<a href="https://www.reddit.com/r/indiedev/submit" target="_blank" class="btn btn-go">🔗 发到 r/indiedev</a>
+<a href="https://www.reddit.com/r/SideProject/submit" target="_blank" class="btn btn-go">🔗 发到 r/SideProject</a>
+</div>
+</div>
+
+<!-- Dev.to -->
+<div class="card">
+<span class="platform plat-devto">Dev.to</span>
+<h2>发布到 Dev.to</h2>
+<div class="content-box" id="devtoContent"># I Built 6 Indie Dev Tools in 2 Weeks — Here's How I Monetized Them All
+
+When I decided to go full indie, I didn't build one product. I built six.
+
+## The Six Tools
+
+🚀 **ShipFast** — One-command deployment. Auto-detects your project and deploys instantly. (`npm i -g @xiaohou2503687-design/shipfast`)
+
+💰 **PayFlow** — Stripe analytics in your terminal. MRR, churn, LTV. No $50/month SaaS needed. (`npm i -g @xiaohou2503687-design/payflow`)
+
+🤖 **BizBot** — AI customer support chatbot. One script tag, 80% less support time.
+
+🛡️ **GuardRail** — Security scanner. Secrets, OWASP, dependency audit. One command.
+
+📸 **PageSnap** — AI landing page CRO auditor. Screenshot → optimization tips.
+
+🔍 **SEOmatic** — AI content cluster generator. One keyword → 20 SEO articles.
+
+## Monetization: Keep It Simple
+
+All tools share one PayPal link and email delivery. No complex SaaS.
+
+🎁 Bundle all 6: ¥199 ($28) lifetime — [Grab it here](https://xiaohou2503687-design.github.io/shipfast-oss/bundle.html)
+
+🩺 Free website health checker: [Try it](https://xiaohou2503687-design.github.io/shipfast-oss/health-check.html)
+
+Tags: #indiedev #saas #cli #webdev #opensource</div>
+<div class="actions">
+<button class="btn btn-copy" onclick="copyText('devtoContent', this)">📋 复制内容</button>
+<a href="https://dev.to/new" target="_blank" class="btn btn-go">🔗 打开 Dev.to 发文章</a>
+</div>
+</div>
+
+<!-- GitHub Profile -->
+<div class="card">
+<span class="platform" style="background:#333;color:#fff">GitHub</span>
+<h2>Star 自己的仓库（快速入口）</h2>
+<div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:12px">
+<a href="https://github.com/xiaohou2503687-design/shipfast" target="_blank" class="btn btn-go" style="font-size:.85em">⭐ shipfast</a>
+<a href="https://github.com/xiaohou2503687-design/payflow" target="_blank" class="btn btn-go" style="font-size:.85em">⭐ payflow</a>
+<a href="https://github.com/xiaohou2503687-design/bizbot" target="_blank" class="btn btn-go" style="font-size:.85em">⭐ bizbot</a>
+<a href="https://github.com/xiaohou2503687-design/pagesnap" target="_blank" class="btn btn-go" style="font-size:.85em">⭐ pagesnap</a>
+<a href="https://github.com/xiaohou2503687-design/guardrail" target="_blank" class="btn btn-go" style="font-size:.85em">⭐ guardrail</a>
+<a href="https://github.com/xiaohou2503687-design/seomatic" target="_blank" class="btn btn-go" style="font-size:.85em">⭐ seomatic</a>
+</div>
+</div>
+
+<div class="toast" id="toast">✅ 已复制！</div>
+
+<script>
+function copyText(id, btn) {
+  var text = document.getElementById(id).textContent || document.getElementById(id).innerText;
+  navigator.clipboard.writeText(text.trim()).then(() => {
+    btn.textContent = '✅ 已复制';
+    btn.classList.add('btn-copied');
+    var toast = document.getElementById('toast');
+    toast.style.display = 'block';
+    setTimeout(() => { toast.style.display = 'none'; btn.textContent = '📋 复制内容'; btn.classList.remove('btn-copied'); }, 2000);
+  });
+}
+</script>
+</body>
+</html>
