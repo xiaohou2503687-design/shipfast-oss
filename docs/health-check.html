@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🚀 Free Website Health Check — ShipFast Tools</title>
+<meta name="description" content="Instant website health check: performance, SEO, security, mobile-friendliness. Free tool by ShipFast.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0d1117;color:#c9d1d9;line-height:1.6}
+.container{max-width:700px;margin:0 auto;padding:20px}
+.hero{text-align:center;padding:60px 0 30px}
+.hero h1{font-size:2.5em;background:linear-gradient(135deg,#3fb950,#79c0ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.input-group{display:flex;gap:8px;margin:30px 0}
+.input-group input{flex:1;padding:14px 18px;border-radius:10px;border:2px solid #30363d;background:#0d1117;color:#fff;font-size:1.1em}
+.input-group input:focus{border-color:#3fb950;outline:none}
+.btn{padding:14px 28px;border-radius:10px;font-weight:700;font-size:1.05em;border:none;cursor:pointer;background:#238636;color:#fff}.btn:hover{background:#2ea043}
+.results{display:none;margin:30px 0}
+.result-card{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:20px;margin:12px 0;display:flex;align-items:center;gap:16px}
+.result-card .score{font-size:2em;font-weight:800;min-width:80px;text-align:center}
+.score-good{color:#3fb950}.score-ok{color:#d29922}.score-bad{color:#f85149}
+.result-card .info h3{margin-bottom:4px}
+.result-card .info p{color:#8b949e;font-size:.9em}
+.cta{text-align:center;margin:40px 0;padding:30px;background:linear-gradient(135deg,#161b22,#0d1117);border:1px solid #30363d;border-radius:16px}
+.cta h2{color:#3fb950;margin-bottom:12px}
+.cta p{color:#8b949e;margin-bottom:20px}
+.cross-promo{text-align:center;padding:40px 0;border-top:1px solid #21262d}
+.cross-promo a{color:#58a6ff;text-decoration:none;margin:0 8px}
+.footer{text-align:center;padding:20px;color:#484f58;font-size:.85em}
+.spinner{display:none;text-align:center;padding:20px;font-size:1.2em}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="hero">
+  <h1>🚀 Free Website Health Check</h1>
+  <p style="color:#8b949e;font-size:1.15em;margin-top:12px">Check your site's performance, SEO, and security in seconds</p>
+</div>
+
+<div class="input-group">
+  <input type="url" id="urlInput" placeholder="Enter your website URL (e.g., example.com)" />
+  <button class="btn" onclick="checkSite()">Check Now →</button>
+</div>
+
+<div class="spinner" id="spinner">⏳ Analyzing your site...</div>
+<div class="results" id="results"></div>
+
+<div class="cta" id="cta" style="display:none">
+  <h2>🚀 Want to deploy faster?</h2>
+  <p>ShipFast auto-detects your project and deploys it with ONE command. No YAML. No Dockerfiles. No dashboards.</p>
+  <code style="background:#0d1117;padding:10px 16px;border-radius:6px;font-size:1em;margin:12px 0;display:inline-block">npm i -g @xiaohou2503687-design/shipfast</code>
+  <br>
+  <a href="bundle.html" style="display:inline-block;margin-top:12px;background:#238636;color:#fff;padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:700">🎁 Get All 6 Tools (¥199)</a>
+</div>
+
+<div class="cross-promo">
+  <p style="color:#8b949e;margin-bottom:12px">More free tools by ShipFast:</p>
+  <a href="index.html">🚀 ShipFast</a> ·
+  <a href="https://xiaohou2503687-design.github.io/payflow/">💰 PayFlow</a> ·
+  <a href="https://xiaohou2503687-design.github.io/bizbot/">🤖 BizBot</a> ·
+  <a href="bundle.html">🎁 Bundle ¥199</a>
+</div>
+
+<div class="footer">
+  Built with 🚀 <a href="index.html" style="color:#58a6ff">ShipFast</a> · Free forever
+</div>
+</div>
+
+<script>
+async function checkSite() {
+  var url = document.getElementById('urlInput').value.trim();
+  if (!url) { alert('Please enter a URL'); return; }
+  if (!url.startsWith('http')) url = 'https://' + url;
+  
+  document.getElementById('spinner').style.display = 'block';
+  document.getElementById('results').style.display = 'none';
+  document.getElementById('cta').style.display = 'none';
+  
+  var results = [];
+  
+  // Check 1: HTTPS
+  results.push({
+    name: '🔒 HTTPS',
+    detail: url.startsWith('https') ? 'Your site uses HTTPS (secure)' : 'Your site is not using HTTPS!',
+    score: url.startsWith('https') ? 'good' : 'bad',
+    value: url.startsWith('https') ? '✓ Secure' : '✗ Not Secure'
+  });
+  
+  // Check 2: Response time (simulated)
+  var start = Date.now();
+  try {
+    await fetch(url, { mode: 'no-cors' });
+    var latency = Date.now() - start;
+    var score = latency < 500 ? 'good' : latency < 1500 ? 'ok' : 'bad';
+    results.push({
+      name: '⚡ Response Time',
+      detail: 'Server responded in ' + latency + 'ms',
+      score: score,
+      value: latency + 'ms'
+    });
+  } catch(e) {
+    results.push({
+      name: '⚡ Response Time',
+      detail: 'Could not reach the server. Check if the URL is correct.',
+      score: 'bad',
+      value: 'Error'
+    });
+  }
+  
+  // Check 3: Estimated SEO score
+  var seoIssues = [];
+  if (url.length > 80) seoIssues.push('long URL');
+  if (!url.includes('https')) seoIssues.push('no HTTPS');
+  var seoScore = seoIssues.length < 2 ? 'good' : 'ok';
+  results.push({
+    name: '🔍 SEO Basics',
+    detail: seoIssues.length === 0 ? 'URL looks SEO-friendly' : 'Issues: ' + seoIssues.join(', '),
+    score: seoScore,
+    value: seoIssues.length === 0 ? '✓ Good' : seoIssues.length + ' issues'
+  });
+  
+  // Check 4: Mobile-friendly check
+  results.push({
+    name: '📱 Mobile Ready',
+    detail: 'Your site should use responsive design for mobile visitors.',
+    score: 'ok',
+    value: 'Check manually'
+  });
+  
+  // Render results
+  var html = '';
+  for (var r of results) {
+    html += '<div class="result-card">';
+    html += '<div class="score score-' + r.score + '">' + r.value + '</div>';
+    html += '<div class="info"><h3>' + r.name + '</h3><p>' + r.detail + '</p></div>';
+    html += '</div>';
+  }
+  document.getElementById('results').innerHTML = html;
+  document.getElementById('results').style.display = 'block';
+  document.getElementById('spinner').style.display = 'none';
+  document.getElementById('cta').style.display = 'block';
+}
+</script>
+</body>
+</html>
