@@ -80,11 +80,26 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;b
 .toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#0f0;color:#000;padding:12px 24px;border-radius:8px;font-weight:600;z-index:2000;display:none}
 .toast.show{display:block;animation:fadeIn .3s}
 @keyframes fadeIn{from{opacity:0;transform:translateX(-50%) translateY(20px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
+.fast-buy{position:sticky;top:0;z-index:1200;background:#0f172a;border-bottom:1px solid #334155;padding:12px 16px}
+.fast-buy-inner{max-width:1100px;margin:0 auto;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;align-items:center}
+.fast-buy .label{font-weight:800;color:#fff}
+.fast-buy a{display:inline-block;text-decoration:none;padding:8px 14px;border-radius:999px;font-weight:800}
+.fast-buy .primary{background:#22c55e;color:#07110b}
+.fast-buy .secondary{background:#1d4ed8;color:#fff}
+.fast-buy .ghost{background:#111827;color:#cbd5e1;border:1px solid #334155}
 
 @media(max-width:600px){.hero h1{font-size:2em}.packs{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
+<div class="fast-buy">
+  <div class="fast-buy-inner">
+    <span class="label">Fastest checkout</span>
+    <a class="primary" href="https://www.paypal.me/top527/14" target="_blank" rel="noopener">Founder Pass $14</a>
+    <a class="secondary" href="https://www.paypal.me/top527/50" target="_blank" rel="noopener">Deploy Rescue $50</a>
+    <a class="ghost" href="support.html">Details</a>
+  </div>
+</div>
 <div style="position:sticky;top:0;z-index:9999;background:#0f172a;color:#fff;border-bottom:1px solid #334155;padding:12px 16px;text-align:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
   <strong>24h Founder Pass:</strong> all 6 tools lifetime for <strong>$14</strong>
   <a href="https://www.paypal.me/top527/14" target="_blank" style="display:inline-block;margin-left:10px;background:#22c55e;color:#07110b;text-decoration:none;padding:8px 14px;border-radius:8px;font-weight:800">Pay $14</a>
