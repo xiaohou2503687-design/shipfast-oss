@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Deploy Rescue - $50 Fixed-Price Deployment Help</title>
-<meta name="description" content="Fixed-price deployment help for Vercel, Netlify, Cloudflare Pages, GitHub Actions, Railway, Render, Fly.io, and GitHub Pages projects.">
-<link rel="canonical" href="https://xiaohou2503687-design.github.io/shipfast-oss/deploy-rescue.html">
-<meta property="og:title" content="Deploy Rescue - $50 Fixed-Price Deployment Help">
-<meta property="og:description" content="Fixed-price deployment help for Vercel, Netlify, Cloudflare Pages, GitHub Actions, Railway, Render, Fly.io, and GitHub Pages projects.">
+<title>Fix GitHub Actions Build Failed Because of Node Version</title>
+<meta name="description" content="Fix Node version mismatch in GitHub Actions workflows using actions/setup-node, package engines, and lockfile-aware installs.">
+<link rel="canonical" href="https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/github-actions-node-version-build-failed.html">
+<meta property="og:title" content="Fix GitHub Actions Build Failed Because of Node Version">
+<meta property="og:description" content="Fix Node version mismatch in GitHub Actions workflows using actions/setup-node, package engines, and lockfile-aware installs.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://xiaohou2503687-design.github.io/shipfast-oss/deploy-rescue.html">
+<meta property="og:url" content="https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/github-actions-node-version-build-failed.html">
 <style>*{box-sizing:border-box}body{margin:0;background:#07111f;color:#f8fafc;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.65}a{color:#93c5fd}.wrap{max-width:1040px;margin:0 auto;padding:34px 20px}.nav{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;border-bottom:1px solid #1f2a44;padding-bottom:16px}.brand{font-weight:900;color:#fff;text-decoration:none}.navlinks{display:flex;gap:12px;flex-wrap:wrap}.navlinks a{color:#cbd5e1;text-decoration:none;font-weight:700;font-size:.94rem}.hero{padding:56px 0 34px}.eyebrow{color:#7ee787;font-weight:900;text-transform:uppercase;letter-spacing:.08em;font-size:.82rem}h1{font-size:clamp(2.2rem,5vw,4.6rem);line-height:1.02;margin:10px 0 16px}h2{font-size:1.7rem;margin-top:36px}h3{margin-bottom:6px}.lead{font-size:1.2rem;color:#b6c2d5;max-width:760px}.cta{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}.btn{display:inline-block;background:#238636;color:#fff;text-decoration:none;padding:13px 18px;border-radius:10px;font-weight:900;border:1px solid #2ea043}.btn.secondary{background:#111827;border-color:#374151;color:#e5e7eb}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}.card{background:#0d1728;border:1px solid #22304b;border-radius:14px;padding:20px}.card h3{margin-top:0;color:#bfdbfe}.muted{color:#b6c2d5}.pill{display:inline-block;background:#13233b;border:1px solid #2c456b;color:#bfdbfe;border-radius:999px;padding:5px 10px;font-size:.82rem;font-weight:800;margin:3px}.note{background:#101827;border:1px solid #344056;border-radius:12px;padding:18px;margin:24px 0}.warning{background:#1f1820;border:1px solid #6b2d3b}.steps li{margin:10px 0}.code{background:#030712;border:1px solid #1f2937;border-radius:10px;padding:14px;overflow:auto;color:#d1fae5;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.92rem}.toc{background:#0b1220;border:1px solid #1f2a44;border-radius:12px;padding:16px}.footer{border-top:1px solid #1f2a44;color:#94a3b8;text-align:center;padding:28px 20px;margin-top:50px}.tool textarea{width:100%;min-height:170px;border-radius:12px;border:1px solid #334155;background:#020617;color:#e5e7eb;padding:14px;font:14px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}.tool select,.tool input{width:100%;border-radius:10px;border:1px solid #334155;background:#020617;color:#e5e7eb;padding:12px;margin:6px 0 12px}.result{white-space:pre-wrap;background:#020617;border:1px solid #334155;border-radius:12px;padding:16px;margin-top:14px;color:#d1fae5}.small{font-size:.92rem;color:#94a3b8}.breadcrumbs{font-size:.9rem;color:#94a3b8;margin-top:18px}.breadcrumbs a{color:#bfdbfe;text-decoration:none}@media(max-width:640px){.nav{align-items:flex-start}.cta{flex-direction:column}.btn{text-align:center}}</style>
 </head>
 <body>
@@ -24,28 +24,36 @@
     </div>
   </nav>
   
+<div class="breadcrumbs"><a href="https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes.html">Fix Library</a> ? GitHub Actions</div>
 <section class="hero">
-  <div class="eyebrow">Fixed-price deployment help</div>
-  <h1>Deploy Rescue for indie projects stuck before launch.</h1>
-  <p class="lead">I help debug failed deployments on Vercel, Netlify, Railway, Render, Cloudflare Pages, Fly.io, GitHub Pages, and GitHub Actions. Best for small SaaS apps, landing pages, MVPs, portfolios, and hackathon projects.</p>
-  <div class="cta"><a class="btn" href="https://www.paypal.me/top527/50" target="_blank" rel="noopener">Pay $50</a><a class="btn secondary" href="mailto:shipfast.dev@proton.me?subject=Deploy%20Rescue%20Request">Email project details</a></div>
-  <p class="small">After payment, email the receipt, repository link, deployment URL, platform, and latest error log to <a href="mailto:shipfast.dev@proton.me">shipfast.dev@proton.me</a>.</p>
+  <div class="eyebrow">GitHub Actions troubleshooting</div>
+  <h1>Fix GitHub Actions Build Failed Because of Node Version</h1>
+  <p class="lead">A CI-only Node failure often means GitHub Actions is using a different Node version than local development. Pin the version with actions/setup-node and align it with package.json engines.</p>
+  <div class="cta"><a class="btn" href="https://xiaohou2503687-design.github.io/shipfast-oss/deploy-rescue.html">Book $50 Deploy Rescue</a><a class="btn secondary" href="https://xiaohou2503687-design.github.io/shipfast-oss/deployment-error-checklist.html">Generate a checklist</a></div>
 </section>
 <section class="grid">
-  <div class="card"><h3>Included</h3><p class="muted">Build command cleanup, platform config review, environment variable checklist, deployment logs diagnosis, and one working deployment path when the project is deployable.</p></div>
-  <div class="card"><h3>Not included</h3><p class="muted">Large feature development, paid cloud bills, private account purchases, malware projects, or rewrites unrelated to deployment.</p></div>
-  <div class="card"><h3>What to send</h3><p class="muted">Repo link or zip, platform name, expected URL, error log, required env var names without secret values, and what changed recently.</p></div>
+  <div class="card"><h2>Common symptoms</h2><ul><li>CI fails with unsupported engine or syntax errors.</li><li>The project builds locally but fails on ubuntu-latest.</li><li>Dependencies install differently in CI than locally.</li></ul></div>
+  <div class="card"><h2>What to check first</h2><p class="muted">Platform: <strong>GitHub Actions</strong><br>Error: <strong>Node version mismatch</strong></p><p>A CI-only Node failure often means GitHub Actions is using a different Node version than local development. Pin the version with actions/setup-node and align it with package.json engines.</p></div>
 </section>
 <section>
-  <h2>Try a free fix first</h2>
-  <div class="grid">
-    <article class="card"><h3><a href="https://xiaohou2503687-design.github.io/shipfast-oss/deployment-error-checklist.html">Deployment Error Checklist Generator</a></h3><p class="muted">Paste your log and get a focused checklist in the browser.</p></article>
-    <article class="card"><h3><a href="https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes.html">Deployment Error Fix Library</a></h3><p class="muted">Step-by-step pages for common Vercel, Cloudflare Pages, GitHub Actions, Netlify, Next.js, and Vite issues.</p></article>
-  </div>
+  <h2>Step-by-step fix</h2>
+  <ol class="steps"><li>Find your local version with node -v and compare it to the Actions log.</li><li>Use actions/setup-node with a specific version such as 20.x.</li><li>Use npm ci for reproducible installs when package-lock.json is committed.</li><li>If the project has engines in package.json, keep it consistent with the workflow.</li></ol>
+  <pre class="code">- uses: actions/setup-node@v4
+  with:
+    node-version: 20
+    cache: npm
+
+- run: npm ci
+- run: npm run build</pre>
+</section>
+<section class="note warning">
+  <h2>Common mistake to avoid</h2>
+  <p>Do not rely on the runner default Node version. Defaults change and can break old workflows.</p>
 </section>
 <section class="note">
-  <h2>Simple pricing</h2>
-  <p class="muted"><strong>$50 fixed price</strong> for a deployment rescue attempt on one small project. If the issue is outside deployment scope, I will reply with the blocking reason and the safest next step.</p>
+  <h2>Still stuck?</h2>
+  <p class="muted">Send the deploy log, repository link, target platform, and expected URL. ShipFast Deploy Rescue is a fixed-price debugging service for indie projects and MVPs.</p>
+  <div class="cta"><a class="btn" href="https://xiaohou2503687-design.github.io/shipfast-oss/deploy-rescue.html">Get Deploy Rescue</a><a class="btn secondary" href="mailto:shipfast.dev@proton.me?subject=Deploy%20Rescue%20-%20github-actions-node-version-build-failed">Email project details</a></div>
 </section>
 
 </div>
