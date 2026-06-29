@@ -3,14 +3,36 @@
   <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-rescue.html</loc></url>
   <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes.html</loc></url>
   <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deployment-error-checklist.html</loc></url>
-  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/vercel-nextjs-500-internal-server-error.html</loc></url>
-  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/vercel-npm-run-build-failed.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/astro-vercel-output-directory-404.html</loc></url>
   <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/cloudflare-pages-build-command-failed.html</loc></url>
   <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/cloudflare-pages-environment-variables-not-working.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/cloudflare-pages-node-version-error.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/cloudflare-pages-vite-blank-page.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/docker-env-vars-not-available-runtime.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/docker-nextjs-standalone-build-failed.html</loc></url>
   <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/github-actions-deploy-permission-denied.html</loc></url>
   <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/github-actions-node-version-build-failed.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/github-actions-pages-deploy-404.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/github-actions-secret-not-available-fork-pr.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/github-pages-custom-domain-404.html</loc></url>
   <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/netlify-build-command-failed.html</loc></url>
-  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/vite-github-pages-404-after-deploy.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/netlify-environment-variables-undefined.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/netlify-large-media-deploy-failed.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/netlify-nextjs-plugin-missing.html</loc></url>
   <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/nextjs-environment-variables-not-working-vercel.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/nextjs-image-optimization-error-vercel.html</loc></url>
   <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/nextjs-module-not-found-build-error.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/npm-err-eresolve-deploy-failed.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/pnpm-lockfile-vercel-build-failed.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/railway-build-failed-npm-install.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/railway-start-command-not-found.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/render-node-deploy-port-not-detected.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/render-prisma-database-url-missing.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/sveltekit-cloudflare-pages-adapter-error.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/vercel-404-after-deploy-nextjs-app-router.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/vercel-function-timeout-nextjs.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/vercel-nextjs-500-internal-server-error.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/vercel-npm-run-build-failed.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/vercel-prisma-client-did-not-initialize.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/vite-github-pages-404-after-deploy.html</loc></url>
 </urlset>
