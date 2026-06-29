@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deployment Error Checklist Generator - ShipFast Deploy Rescue</title>
+<meta name="description" content="Free browser-side deployment error checklist generator for Vercel, Cloudflare Pages, GitHub Actions, Netlify, and GitHub Pages logs.">
+<link rel="canonical" href="https://xiaohou2503687-design.github.io/shipfast-oss/deployment-error-checklist.html">
+<meta property="og:title" content="Deployment Error Checklist Generator - ShipFast Deploy Rescue">
+<meta property="og:description" content="Free browser-side deployment error checklist generator for Vercel, Cloudflare Pages, GitHub Actions, Netlify, and GitHub Pages logs.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://xiaohou2503687-design.github.io/shipfast-oss/deployment-error-checklist.html">
+<style>*{box-sizing:border-box}body{margin:0;background:#07111f;color:#f8fafc;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.65}a{color:#93c5fd}.wrap{max-width:1040px;margin:0 auto;padding:34px 20px}.nav{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;border-bottom:1px solid #1f2a44;padding-bottom:16px}.brand{font-weight:900;color:#fff;text-decoration:none}.navlinks{display:flex;gap:12px;flex-wrap:wrap}.navlinks a{color:#cbd5e1;text-decoration:none;font-weight:700;font-size:.94rem}.hero{padding:56px 0 34px}.eyebrow{color:#7ee787;font-weight:900;text-transform:uppercase;letter-spacing:.08em;font-size:.82rem}h1{font-size:clamp(2.2rem,5vw,4.6rem);line-height:1.02;margin:10px 0 16px}h2{font-size:1.7rem;margin-top:36px}h3{margin-bottom:6px}.lead{font-size:1.2rem;color:#b6c2d5;max-width:760px}.cta{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}.btn{display:inline-block;background:#238636;color:#fff;text-decoration:none;padding:13px 18px;border-radius:10px;font-weight:900;border:1px solid #2ea043}.btn.secondary{background:#111827;border-color:#374151;color:#e5e7eb}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}.card{background:#0d1728;border:1px solid #22304b;border-radius:14px;padding:20px}.card h3{margin-top:0;color:#bfdbfe}.muted{color:#b6c2d5}.pill{display:inline-block;background:#13233b;border:1px solid #2c456b;color:#bfdbfe;border-radius:999px;padding:5px 10px;font-size:.82rem;font-weight:800;margin:3px}.note{background:#101827;border:1px solid #344056;border-radius:12px;padding:18px;margin:24px 0}.warning{background:#1f1820;border:1px solid #6b2d3b}.steps li{margin:10px 0}.code{background:#030712;border:1px solid #1f2937;border-radius:10px;padding:14px;overflow:auto;color:#d1fae5;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.92rem}.toc{background:#0b1220;border:1px solid #1f2a44;border-radius:12px;padding:16px}.footer{border-top:1px solid #1f2a44;color:#94a3b8;text-align:center;padding:28px 20px;margin-top:50px}.tool textarea{width:100%;min-height:170px;border-radius:12px;border:1px solid #334155;background:#020617;color:#e5e7eb;padding:14px;font:14px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}.tool select,.tool input{width:100%;border-radius:10px;border:1px solid #334155;background:#020617;color:#e5e7eb;padding:12px;margin:6px 0 12px}.result{white-space:pre-wrap;background:#020617;border:1px solid #334155;border-radius:12px;padding:16px;margin-top:14px;color:#d1fae5}.small{font-size:.92rem;color:#94a3b8}.breadcrumbs{font-size:.9rem;color:#94a3b8;margin-top:18px}.breadcrumbs a{color:#bfdbfe;text-decoration:none}@media(max-width:640px){.nav{align-items:flex-start}.cta{flex-direction:column}.btn{text-align:center}}</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav">
+    <a class="brand" href="https://xiaohou2503687-design.github.io/shipfast-oss/">ShipFast Deploy Rescue</a>
+    <div class="navlinks">
+      <a href="https://xiaohou2503687-design.github.io/shipfast-oss/deploy-rescue.html">$50 Rescue</a>
+      <a href="https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes.html">Fix Library</a>
+      <a href="https://xiaohou2503687-design.github.io/shipfast-oss/deployment-error-checklist.html">Free Checklist</a>
+      <a href="mailto:shipfast.dev@proton.me">Email</a>
+    </div>
+  </nav>
+  
+<section class="hero">
+  <div class="eyebrow">Free deployment tool</div>
+  <h1>Deployment Error Checklist Generator</h1>
+  <p class="lead">Paste the first 30-80 lines of your deploy log, choose the platform, and get a focused checklist. This runs in your browser; no log is uploaded.</p>
+</section>
+<section class="card tool">
+  <label for="platform"><strong>Platform</strong></label>
+  <select id="platform">
+    <option>Vercel</option><option>Cloudflare Pages</option><option>GitHub Actions</option><option>Netlify</option><option>GitHub Pages</option><option>Other</option>
+  </select>
+  <label for="log"><strong>Paste deploy log</strong></label>
+  <textarea id="log" placeholder="Example: npm run build failed, Module not found, permission denied, missing environment variable..."></textarea>
+  <button class="btn" onclick="makeChecklist()">Generate checklist</button>
+  <div id="result" class="result" style="display:none"></div>
+</section>
+<section class="note">
+  <h2>Need a human to read the logs?</h2>
+  <p class="muted">Email the log, repo link, platform, and expected URL to <a href="mailto:shipfast.dev@proton.me">shipfast.dev@proton.me</a>, or book the fixed-price rescue.</p>
+  <div class="cta"><a class="btn" href="https://xiaohou2503687-design.github.io/shipfast-oss/deploy-rescue.html">Book Deploy Rescue</a></div>
+</section>
+<script>
+function makeChecklist(){
+  const platform=document.getElementById('platform').value;
+  const log=document.getElementById('log').value.toLowerCase();
+  const items=[];
+  items.push('1. Reproduce locally with a clean install: npm ci && npm run build.');
+  if(log.includes('module not found')||log.includes('cannot find module')) items.push('2. Fix the first missing module: install it, commit the lockfile, and check import path casing.');
+  if(log.includes('env')||log.includes('undefined')||log.includes('api key')) items.push('3. Check environment variables in '+platform+' for the correct Production/Preview environment; redeploy after edits.');
+  if(log.includes('permission denied')||log.includes('403')||log.includes('publickey')) items.push('4. Check token/SSH permissions, deploy keys, and GitHub Actions workflow permissions.');
+  if(log.includes('node')||log.includes('engine')) items.push('5. Pin Node version in package.json engines and the platform build settings/workflow.');
+  if(log.includes('404')||log.includes('not found')) items.push('6. Verify output directory, base path, routing fallback, and platform publish source.');
+  if(items.length===1) items.push('2. Read the first error above the final exit code; the final line is often only a symptom.','3. Verify build command, output directory, Node version, and environment variables.','4. Compare local build output with platform settings.');
+  items.push('If this still fails, send the full log and repo link to shipfast.dev@proton.me.');
+  const out='Platform: '+platform+'\n\n'+items.join('\n');
+  const r=document.getElementById('result');r.textContent=out;r.style.display='block';
+}
+</script>
+
+</div>
+<footer class="footer">ShipFast Deploy Rescue ? practical deployment fixes for indie developers ? <a href="mailto:shipfast.dev@proton.me">shipfast.dev@proton.me</a></footer>
+</body>
+</html>

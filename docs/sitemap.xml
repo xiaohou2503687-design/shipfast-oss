@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-rescue.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deployment-error-checklist.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/vercel-nextjs-500-internal-server-error.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/vercel-npm-run-build-failed.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/cloudflare-pages-build-command-failed.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/cloudflare-pages-environment-variables-not-working.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/github-actions-deploy-permission-denied.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/github-actions-node-version-build-failed.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/netlify-build-command-failed.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/vite-github-pages-404-after-deploy.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/nextjs-environment-variables-not-working-vercel.html</loc></url>
+  <url><loc>https://xiaohou2503687-design.github.io/shipfast-oss/deploy-fixes/nextjs-module-not-found-build-error.html</loc></url>
+</urlset>
